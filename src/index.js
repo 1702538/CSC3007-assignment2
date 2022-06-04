@@ -3,14 +3,16 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import CrimeByType from "./CrimeTypeComponent";
-import { HashRouter, BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <Route exact path="/" component={App} />
-      <Route exact path="/posts" component={CrimeByType} />
+    <HashRouter basename="/">
+      <Routes>
+        <Route path="/" element={<App />}></Route>
+        <Route path="/crimetype" element={<CrimeByType />}></Route>
+      </Routes>
     </HashRouter>
   </React.StrictMode>
 );
