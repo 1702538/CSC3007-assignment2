@@ -11,7 +11,10 @@ root.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<App />}></Route>
-        <Route path="/crimetype" element={<CrimeByType />}></Route>
+        <Route
+          path="/CSC3007-assignment2/crimetype"
+          element={<CrimeByType />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
