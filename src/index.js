@@ -11,7 +11,6 @@ root.render(
     <HashRouter basename="/">
       <Routes>
         <Route path="/" element={<App />}></Route>
-        <Route path="/crimetype" element={<CrimeByType />}></Route>
       </Routes>
     </HashRouter>
   </React.StrictMode>

@@ -243,9 +243,6 @@ function CrimeChart() {
         <svg ref={svgRef} width="1000px" height="450px" />
         <div id="tooltip">&nbsp;</div>
         <br />
-        <a href="/crimetype">
-          <b>Click here to view statistics by crime type</b>
-        </a>
       </center>
     </div>
   );
@@ -260,3 +257,7 @@ export default CrimeChart;
 //     </option>
 //   ))}
 // </select>;
+
+// <a href="/crimetype">
+//   <b>Click here to view statistics by crime type</b>
+// </a>;
