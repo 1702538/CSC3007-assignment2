@@ -1,15 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
-
 import * as d3 from "d3";
 import * as d3sB from "d3-scale-break";
-
 import "antd/dist/antd.css";
 import { Select } from "antd";
 const { Option } = Select;
 
 function CrimeChart() {
-  const [greeting, setGreeting] = useState("Hello React!");
   const [majorCrimeData, setMajorCrimeData] = useState([]);
   const [listOfYears, setListOfYears] = useState([]);
   const [selectedYearData, setSelectedYearData] = useState([]);
@@ -33,8 +30,6 @@ function CrimeChart() {
     // Reset the graph
     var svg = d3.select(svgRef.current);
     svg.selectAll("*").remove();
-
-    setGreeting(selectedYearData[0]?.year);
 
     // Calculate the maximum x-axis value to display
     const limit_x =
@@ -199,15 +194,12 @@ function CrimeChart() {
         val.year.includes(uniqueYears[0])
       );
       setSelectedYearData(earliestYearData);
-      setGreeting(earliestYearData[0].year.toString());
     });
   };
 
   // Function to update data in setSelectedYearData when user selected a different year
   function handleYearChange(event) {
     console.log(event);
-
-    // setGreeting(event.target.value);
 
     setPreviousYearData(selectedYearData);
     console.log("Previously", selectedYearData[0].year);
@@ -238,26 +230,16 @@ function CrimeChart() {
           &nbsp;&nbsp;Cases Recorded for Selected Major Offences
         </h2>
         <br />
-
         <br />
         <svg ref={svgRef} width="1000px" height="450px" />
         <div id="tooltip">&nbsp;</div>
         <br />
+        <a href="/CSC3007-assignment2/#/crimetypechart">
+          <b>Click here to view statistics by crime type</b>
+        </a>
       </center>
     </div>
   );
 }
 
 export default CrimeChart;
-
-// <select onChange={handleYearChange}>
-//   {listOfYears.map((year) => (
-//     <option key={year} value={year}>
-//       {year}
-//     </option>
-//   ))}
-// </select>;
-
-// <a href="/crimetype">
-//   <b>Click here to view statistics by crime type</b>
-// </a>;

@@ -1,15 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
-
 import * as d3 from "d3";
-import * as d3sB from "d3-scale-break";
-
 import "antd/dist/antd.css";
 import { Select } from "antd";
 const { Option } = Select;
 
-function CrimeForecast() {
-  const [greeting, setGreeting] = useState("Hello React!");
+function CrimeTypeChart() {
   const [majorCrimeData, setMajorCrimeData] = useState([]);
   const [listOfCrimes, setListOfCrimes] = useState([]);
   const [selectedCrimeData, setSelectedCrimeData] = useState([]);
@@ -208,7 +204,7 @@ function CrimeForecast() {
         <svg ref={svgRef} width="1000px" height="500px" />
         <div id="tooltip"></div>
         <br />
-        <a href="/">
+        <a href="/CSC3007-assignment2">
           <b>Click here to view yearly statistics</b>
         </a>
       </center>
@@ -216,4 +212,4 @@ function CrimeForecast() {
   );
 }
 
-export default CrimeForecast;
+export default CrimeTypeChart;
