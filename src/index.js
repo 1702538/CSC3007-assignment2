@@ -2,11 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import CrimeByType from "./CrimeTypeComponent";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <HashRouter basename="/">
+      <Routes>
+        <Route path="/" element={<App />}></Route>
+      </Routes>
+    </HashRouter>
   </React.StrictMode>
 );
 
@@ -21,9 +27,3 @@ reportWebVitals();
 //     <Route path="/crimetype" component={CrimeByType}></Route>
 //   </Routes>
 // </BrowserRouter>;
-
-//  <HashRouter basename="/">
-//    <Routes>
-//      <Route path="/" element={<App />}></Route>
-//    </Routes>
-//  </HashRouter>;
