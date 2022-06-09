@@ -133,7 +133,7 @@ function CrimeTypeChart() {
         d3
           .line()
           .x(function (d) {
-            return x(d.year);
+            return x(d.year) + x.bandwidth() / 2;
           })
           .y(function (d) {
             return y(d.value);
